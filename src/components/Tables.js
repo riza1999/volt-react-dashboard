@@ -1,7 +1,7 @@
 
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faAngleUp, faArrowDown, faArrowUp, faEdit, faEllipsisH, faExternalLinkAlt, faEye, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faAngleUp, faArrowDown, faArrowUp, faEdit, faEllipsisH, faExternalLinkAlt, faEye, faTrashAlt,faWrench } from '@fortawesome/free-solid-svg-icons';
 import { Col, Row, Nav, Card, Image, Button, Table, Dropdown, ProgressBar, Pagination, ButtonGroup } from '@themesberg/react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -131,33 +131,34 @@ export const PageTrafficTable = () => {
 
 export const RankingTable = () => {
   const TableRow = (props) => {
-    const { country, countryImage, overallRank, overallRankChange, travelRank, travelRankChange, widgetsRank, widgetsRankChange } = props;
+    const { showEdit, name, email, role} = props;
 
     return (
       <tr>
         <td className="border-0">
-          <Card.Link href="#" className="d-flex align-items-center">
-            <Image src={countryImage} className="image-small rounded-circle me-2" />
-            <div><span className="h6">{country}</span></div>
-          </Card.Link>
+          {/* <Card.Link className="d-flex align-items-center"> */}
+            <div><span className="h6">{name}</span></div>
+          {/* </Card.Link> */}
         </td>
         <td className="fw-bold border-0">
-          {overallRank ? overallRank : "-"}
+          <div><span className="h6">{email}</span></div>
         </td>
         <td className="border-0">
-          <ValueChange value={overallRankChange} />
-        </td>
-        <td className="fw-bold border-0">
-          {travelRank ? travelRank : "-"}
-        </td>
-        <td className="border-0">
-          <ValueChange value={travelRankChange} />
-        </td>
-        <td className="fw-bold border-0">
-          {widgetsRank ? widgetsRank : "-"}
-        </td>
-        <td className="border-0">
-          <ValueChange value={widgetsRankChange} />
+          <div>
+            <span className="h6">{role}</span>
+            {/* <Dropdown as={ButtonGroup} className={`float-end ${!showEdit ? 'd-none' : ''}`}>
+              <Dropdown.Toggle split variant="tertiary">
+                <FontAwesomeIcon icon={faAngleDown} className="dropdown-arrow" />
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="#action">Edit</Dropdown.Item>
+                <Dropdown.Item href="#action">Delete</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown> */}
+            <Button variant="danger" size="sm" className={`float-end ${!showEdit ? 'd-none' : ''}`}><FontAwesomeIcon icon={faTrashAlt}/> Delete</Button>
+            <Button variant="info" size="sm" className={`me-3 float-end ${!showEdit ? 'd-none' : ''}`}><FontAwesomeIcon icon={faWrench}/> Edit</Button>
+          </div>
         </td>
       </tr>
     );
@@ -169,13 +170,10 @@ export const RankingTable = () => {
         <Table responsive className="table-centered table-nowrap rounded mb-0">
           <thead className="thead-light">
             <tr>
-              <th className="border-0">Country</th>
-              <th className="border-0">All</th>
-              <th className="border-0">All Change</th>
-              <th className="border-0">Travel & Local</th>
-              <th className="border-0">Travel & Local Change</th>
-              <th className="border-0">Widgets</th>
-              <th className="border-0">Widgets Change</th>
+              <th className="border-0">Name</th>
+              <th className="border-0">Email</th>
+              <th className="border-0">Role</th>
+              {/* <th className="border-0"></th> */}
             </tr>
           </thead>
           <tbody>

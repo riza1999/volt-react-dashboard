@@ -27,12 +27,10 @@ const pageTraffic = [
 ];
 
 const pageRanking = [
-    { id: 1, country: "United States", countryImage: USAFlag, overallRank: 76, overallRankChange: -5, travelRank: 3, widgetsRank: 32, widgetsRankChange: 3 },
-    { id: 2, country: "Canada", countryImage: CanadaFlag, overallRank: 106, overallRankChange: 17, travelRank: 4, widgetsRank: 30, widgetsRankChange: 3 },
-    { id: 4, country: "France", countryImage: FranceFlag, overallRank: 112, overallRankChange: 10, travelRank: 5, widgetsRank: 34, widgetsRankChange: 7 },
-    { id: 5, country: "Japan", countryImage: JapanFlag, overallRank: 115, overallRankChange: 3, travelRank: 7, travelRankChange: 1, widgetsRank: 39, widgetsRankChange: -2 },
-    { id: 3, country: "Germany", countryImage: GermanyFlag, overallRank: 147, overallRankChange: -12, travelRank: 10, travelRankChange: -1, widgetsRank: 12, widgetsRankChange: -5 },
-    { id: 6, country: "Italy", countryImage: ItalyFlag, overallRank: 220, overallRankChange: -56, travelRank: 11, travelRankChange: -3, widgetsRank: 89, widgetsRankChange: 2 }
+    { id: 1, name: "Muhamad Riza Kurniawanda", email: "m.riza@phi-integration.com", role: "Admin", showEdit: false},
+    { id: 2, name: "Alfid Santosa", email: "alfid.santosa@phi-integration.com", role: "Super Admin", showEdit: false},
+    { id: 3, name: "Hani", email: "hani@phi-integration.com", role: "Editor", showEdit: true},
+    { id: 4, name: "Yuliansyah Ibrahim", email: "yuliansah.ibrahim@phi-integration.com", role: "Admin", showEdit: true},
 ];
 
 const invoiceItems = [
